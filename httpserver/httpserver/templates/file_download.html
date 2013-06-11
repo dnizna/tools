@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block content %}
+<p><strong>文件下载路径：</strong> {{ basedir }} </p>
+<table class="table table-striped">
+  <tr>
+    <th>文件名</th>
+    <th>大小(kb)</th>
+    <th>时间</th>
+    <th>操作</th>
+  </tr>
+  {% for item in fileList %}
+  <tr>
+    <td>{{ item.name }}</td>
+    <td>{{ item.size }}</td>
+    <td>{{ item.time }}</td>
+    <td><a href="#">下载</a></td>
+  </tr> 
+  {% endfor %}
+</table>
+{% endblock %}
